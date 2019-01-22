@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Basic Quiz (Timed Form)</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Dokdo|Freckle+Face|Hanalei+Fill" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1>Trivia!</h1>
+    </header>
+
+    <br>
+
+    <div class="rules">
+        <p>A random number and four dinosaurs are shown below.</p>
+
+        <p>Click a dinosaur to discover its hidden value to add to your Dino-Score.</p>
+
+        <p>— You WIN if your Dino-Score EQUALS the random number. —</p>
+
+        <p>— You LOSE if your Dino-Score EXCEEDS the random number. —</p>
+
+        <p>A dinosaur's value changes for each game.</p>
+
+        <p>GOOD LUCK!</p>
+    </div>
+
+    <br>
+
+    <p id="result"></p>
+
+    <br>
+
+    <div class="dinosaurs">
+
+    </div>
+
+    <br>
+
+    <p id="score"></p>
+
+    <br>
+
+    <p id="win"></p>
+
+    <br>
+
+    <p id="lost"></p>
+
+    <audio id="audio">
+        <source src="win-roar.mp3" type="assets">
+        <source src="lose-roar.mp3" type="assets">
+    </audio>
+
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
+</body>
+
+</html>
