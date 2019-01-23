@@ -6,61 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Basic Quiz (Timed Form)</title>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Dokdo|Freckle+Face|Hanalei+Fill" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
 <body>
+
+    <div id="timer"></div>
+
+    <br>
+
+    <!-- Create a "Start" button for the countdown timer. -->
+    <button id="start">Start</button>
+
+    <br>
+
+    <!-- Create a "Finished" button if player finishes early. -->
+    <button id="finished">Finished</button>
+
+    <br>
+
     <header id="header">
-        <h1>Trivia!</h1>
+        <h1>Clint Eastwood Movie Trivia</h1>
+
+        <h1>Do ya feel, lucky?</h1>
+
+        <h1>Well, do ya, punk?</h1>
+
+        <h1>GOOD LUCK!</h1>
     </header>
 
-    <br>
+    <div id="quiz-space">
 
-    <div class="rules">
-        <p>A random number and four dinosaurs are shown below.</p>
+        <p id="correct"></p>
 
-        <p>Click a dinosaur to discover its hidden value to add to your Dino-Score.</p>
+        <br>
 
-        <p>— You WIN if your Dino-Score EQUALS the random number. —</p>
+        <p id="incorrect"></p>
 
-        <p>— You LOSE if your Dino-Score EXCEEDS the random number. —</p>
+        <br>
 
-        <p>A dinosaur's value changes for each game.</p>
+        <p id="unanswered"></p>
 
-        <p>GOOD LUCK!</p>
-    </div>
+        <audio id="audio">
+            <source src=".mp3" type="assets">
+            <source src=".mp3" type="assets">
+        </audio>
 
-    <br>
+        <!-- jQuery -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <p id="result"></p>
+        <!-- Script -->
+        <script type="text/javascript" src="assets/javascript/app.js"></script>
+        <!-- Script -->
+        <script>
 
-    <br>
+        </script>
 
-    <div class="dinosaurs">
-
-    </div>
-
-    <br>
-
-    <p id="score"></p>
-
-    <br>
-
-    <p id="win"></p>
-
-    <br>
-
-    <p id="lost"></p>
-
-    <audio id="audio">
-        <source src="win-roar.mp3" type="assets">
-        <source src="lose-roar.mp3" type="assets">
-    </audio>
-
-    <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
 
 </html>
