@@ -4,7 +4,7 @@
 
 // The game ends when the player either finishes early or the time runs out. The results page will display the number of questions that the player answered correctly and incorrectly.
 
-// Create a countdown timer that counts down approximately 60-120 seconds.
+
 
 // Clicking the start button begins the game with the countdown timer counting down.
 
@@ -18,53 +18,43 @@
 
 // The game should restart if the player clicks Start.
 
-var timeleft = 10;
-
-var startTime = 0;
-var currentTime = 0;
-
-function convertSeconds(s) {
-    var min = floor(s / 60);
-    var sec = s % 60;
-    return nf(min, 2) + ':' + nf(sec, 2);
-}
-
-// var ding;
-
-// function preload() {
-//   ding = loadSound("ding.mp3");
-// }
-
-function setup() {
-    noCanvas();
-    startTime = millis();
 
 
-    var params = getURLParams();
-    console.log(params);
-    if (params.minute) {
-        var min = params.minute;
-        timeleft = min * 60;
+
+// Creates Start button on-click listener event:
+$("#start").on("click", function () {
+
+    // Create a countdown timer that counts down 60 seconds:
+    var countdownNumber = 60;
+
+    var intervalId;
+
+    function run() {
+        intervalId = setInterval(decrement, 1000);
     }
 
-    var timer = select('#timer');
-    timer.html(convertSeconds(timeleft - currentTime));
+    function decrement() {
 
-    var interval = setInterval(timeIt, 1000);
+        countdownNumber--;
 
-    function timeIt() {
-        currentTime = floor((millis() - startTime) / 1000);
-        timer.html(convertSeconds(timeleft - currentTime));
-        if (currentTime == timeleft) {
-            //   ding.play();
-            clearInterval(interval);
-            //counter = 0;
+        $("#countdown").html("<h2>" + countdownNumber + " seconds remaining" + "</h2>");
+
+        if (countdownNumber === 0) {
+
+            stop();
+
+            console.log("Time's Up!");
         }
     }
 
+    function stop() {
+
+        clearInterval(intervalId);
+    }
+
+    run();
+
 }
-
-
 
 
 // // Global scope variables:
