@@ -37,9 +37,7 @@
         <br>
         <br>
         <div class="body">
-
-            <form name="trivia-game">
-
+            <form action=trivia-game method="GET">
                 <div class="questions">
                     <br>
                     <h1>What is my age?</h1>
@@ -82,22 +80,26 @@
                     <input type="radio" name="q5" value="d">d. American <br>
                     <br>
                     <br>
-                    <input type="submit" value="Submit">
+                    <input type="submit" name="submit" value="Submit">
                 </div>
         </div>
     </div>
     </div>
     </form>
 
-    <p id="correct"></p>
+    <div id="results">
 
-    <br>
+        <p id="correct"></p>
 
-    <p id="incorrect"></p>
+        <br>
 
-    <br>
+        <p id="incorrect"></p>
 
-    <p id="unanswered"></p> -->
+        <br>
+
+        <p id="unanswered"></p> -->
+
+    </div>
 
     <!-- <audio id="audio">
                 <source src=".mp3" type="assets">
