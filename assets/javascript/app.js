@@ -1,5 +1,5 @@
 // PSEUDOCODING:
-// This is a timed game with trivia questions and multiple choice answers.
+// This is a timed game with form trivia questions and multiple choice answers.
 
 // The player can only select one answer per question (via radio buttons).
 
@@ -13,8 +13,11 @@
 
 // The game should restart if the player clicks Start.
 
+
+
+// BEGIN CODING HERE:
 // Create a countdown timer that counts down 60 seconds:
-var seconds = 10;
+var seconds = 3;
 
 var intervalId;
 
@@ -44,36 +47,37 @@ function decrement() {
 }
 
 function stop() {
-
     clearInterval(intervalId);
 }
 
-
-// // Creates Finished button on-click listener event:
-// $("#submit").on("click", submit);
+// Creates Submit button on-click listener event:
+$("#submit").on("click", function (e) {
+    console.log("submit click is now working");
+    e.preventDefault();
+});
 
 // function submit() {
 //     var correct = 0;
-//     var numQuestions = 5;
-//     var ansArr = ["a", "b", "c", "d", "d"];
+//     var numQuestions = 1;
+//     var ansArr = ["a"];
 
 //     var q1 = document.forms["trivia-game"]["q1"].value;
-//     var q2 = document.forms["trivia-game"]["q2"].value;
-//     var q3 = document.forms["trivia-game"]["q3"].value;
-//     var q4 = document.forms["trivia-game"]["q4"].value;
-//     var q5 = document.forms["trivia-game"]["q5"].value;
+//     // var q2 = document.forms["trivia-game"]["q2"].value;
+//     // var q3 = document.forms["trivia-game"]["q3"].value;
+//     // var q4 = document.forms["trivia-game"]["q4"].value;
+//     // var q5 = document.forms["trivia-game"]["q5"].value;
 
 //     for (var i = 1; i <= numQuestions.length; i++) {
 //         if (eval("q" + i) === "") {
 //             console.log("Wrong!");
 //         }
 
-
-//         for (var i = 1; i <= numQuestions.length; i++) {
-//             if (eval("q" + i) === ansArr[i - 1]) {
-//                 correct++;
-//             }
-//         }
+        // for (var i = 1; i <= numQuestions.length; i++) {
+        //     if (eval("q" + i) === ansArr[i - 1]) {
+        //         console.log("Correct!");
+        //         correct++;
+        //     }
+        // }
 
 //         var results = document.getElementById("results")
 //         results.innerHTML = "<h2>You scored " + score + "/" + numQuestions + "</h2>"
