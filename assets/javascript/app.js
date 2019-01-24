@@ -1,16 +1,15 @@
+// PSEUDOCODING:
 // This is a timed game with trivia questions and multiple choice answers.
 
 // The player can only select one answer per question.
 
-// The game ends when the player either finishes early or the time runs out. The results page will display the number of questions that the player answered correctly and incorrectly.
+// The game ends when the player either finishes early or the time runs out. The results page will then tally and display the number of the player's correctly and incorrectly answered questions.
 
-
-
-// Clicking the start button begins the game with the countdown timer counting down.
+// Clicking the Start button begins the game with the countdown timer counting down.
 
 // Create a "Start" button for the countdown timer.
 
-// Create a "Finished" button if player finishes early.
+// Create an "I'm Finished!" button if player finishes early.
 
 // Create questions and answers.
 
@@ -18,81 +17,96 @@
 
 // The game should restart if the player clicks Start.
 
+// Create a countdown timer that counts down 60 seconds:
+var seconds = 5;
 
-
+var intervalId;
 
 // Creates Start button on-click listener event:
-$("#start").on("click", function () {
+$("#start").on("click", start);
 
-    // Create a countdown timer that counts down 60 seconds:
-    var countdownNumber = 60;
+function start() {
+    clearInterval(intervalId);
+    intervalId = setInterval(decrement, 1000);
+    clockRunning = true;
+    // Hides Start button
+    $('#start').hide();
+}
 
-    var intervalId;
+function decrement() {
 
-    function run() {
-        intervalId = setInterval(decrement, 1000);
+    seconds--;
+
+    $("#seconds").html("<h1>" + seconds + " seconds remaining" + "</h1>");
+
+    if (seconds === 0) {
+
+        stop();
+
+        console.log("Time's Up!");
     }
+}
 
-    function decrement() {
+function stop() {
 
-        countdownNumber--;
-
-        $("#countdown").html("<h2>" + countdownNumber + " seconds remaining" + "</h2>");
-
-        if (countdownNumber === 0) {
-
-            stop();
-
-            console.log("Time's Up!");
-        }
-    }
-
-    function stop() {
-
-        clearInterval(intervalId);
-    }
-
-    run();
-
+    clearInterval(intervalId);
 }
 
 
-// // Global scope variables:
+// // Creates Finished button on-click listener event:
+// $("#submit").on("click", submit);
+
+function submit() {
+    var correct = 0;
+    var numQuestions = 5;
+    var ansArr = ["a", "b", "c", "d", "d"];
+
+    var q1 = document.forms["trivia-game"]["q1"].value;
+    var q2 = document.forms["trivia-game"]["q2"].value;
+    var q3 = document.forms["trivia-game"]["q3"].value;
+    var q4 = document.forms["trivia-game"]["q4"].value;
+    var q5 = document.forms["trivia-game"]["q5"].value;
+
+    for (var i = 0; i < numQuestions.length; i++) {
+        var response = window.prompt(questions[i].prompt);
+
+        if (response === questions[i].answer) {
+            correct++;
+            console.log("Correct!");
+        } else {
+            console.log("Wrong!");
+        }
+    }
+};
+    console.log("You got " + correct + "/" + questions.length + " correct.");
+
+
+// var questions = [
+//     {
+//         prompt: "What color are apples?\n(a) red\n (b) green\(c) purple\n (d) orange",
+//         answer: "a"
+//     },
+//     {
+//         prompt: "What color are oranges?\n(a) red\n (b) green\(c) purple\n (d) orange",
+//         answer: "d"
+//     },
+//     {
+//         prompt: "What color are kiwis?\n(a) red\n (b) green\(c) purple\n (d) orange",
+//         answer: "b"
+//     }
+// ]
+
 // var correct = 0;
-// var incorrect = 0;
-// var unanswered = 0
-// var countdownStart = 30;
 
-// // Wait until HTML finishes loading before JavaScript runs:
-// $(document).ready(function () {
+// for (var i = 0; i < questions.length; i++) {
+//     var response = window.prompt(questions[i].prompt);
 
-//     // Creates Start button on-click listener event:
-//     $("#start").on("click", function () {
+//     if (response === questions[i].answer) {
+//         correct++;
+//         console.log("Correct!");
+//     } else {
+//         console.log("Wrong!");
+//     }
+// }
 
-//         setTimeout(fiveSeconds, 5000);
-//         setTimeout(tenSeconds, 10000);
-//         setTimeout(timeUp, 15000);
-
-//         function tenSeconds() {
-//             // in the element with an id of `time-remaining` add an h2 saying, "10 Seconds Left!""
-//             $("#time-left").append("<h2>About 10 Seconds Left!</h2>");
-//             // console log 10 seconds left
-//             console.log("10 seconds left");
-//         }
-
-//         function fiveSeconds() {
-//             // in the element with an id of `time-remaining` add an h2 saying, "5 Seconds Left!"
-//             $("#time-left").append("<h2>About 5 Seconds Left!</h2>");
-//             // console log 5 seconds left
-//             console.log("5 seconds left");
-//         }
-
-//         function timeUp() {
-//             // in the element with an id of `time-remaining` add an h2 saying, "Time's Up!""
-//             // console log done
-//             console.log("done");
-//             $("#time-remaining").append("<h2>Time's Up!</h2>");
-//             console.log("Time's Up!");
-//         }
-//     });
-// });
+// console.log("You got " + correct + "/" + questions.length + " correct.")

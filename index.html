@@ -11,59 +11,110 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
+<header id="header">
+    <h1>Clint Eastwood Movie Trivia</h1>
+    <br>
+    <br>
+    <h1>Do ya feel lucky?</h1>
+    <br>
+    <br>
+    <h1>GOOD LUCK!</h1>
+</header>
+
 <body>
 
-    <div id="countdown"></div>
+    <div id=empty-div></div>
 
+    <div id="seconds"></div>
     <br>
-
-    <!-- Create a "Start" button for the countdown timer. -->
-    <button id="start">Start</button>
-
     <br>
-
-    <!-- Create a "Finished" button if player finishes early. -->
-    <button id="finished">Finished</button>
-
-    <br>
-
-    <header id="header">
-        <h1>Clint Eastwood Movie Trivia</h1>
-
-        <h1>Do ya feel, lucky?</h1>
-
-        <h1>Well, do ya, punk?</h1>
-
-        <h1>GOOD LUCK!</h1>
-    </header>
-
-    <div id="quiz-space">
-
-        <p id="correct"></p>
-
+    <!-- Div containing our button controls -->
+    <div id="Start-button">
+        <!-- Create a "Start" button for the countdown timer. -->
+        <button id="start">
+            <h2>Start</h2>
+        </button>
         <br>
-
-        <p id="incorrect"></p>
-
         <br>
+        <div class="body">
 
-        <p id="unanswered"></p>
+            <form name="trivia-game">
 
-        <audio id="audio">
-            <source src=".mp3" type="assets">
-            <source src=".mp3" type="assets">
-        </audio>
+                <div class="questions">
+                    <br>
+                    <h1>What is my age?</h1>
+                    <br>
+                    <input type="radio" name="q1" value="a">a. 45 <br>
+                    <input type="radio" name="q1" value="b">b. 46 <br>
+                    <input type="radio" name="q1" value="c">c. 30 <br>
+                    <input type="radio" name="q1" value="d">d. 18 <br>
+                    <br>
+                    <br>
+                    <h1>What is my name?</h1>
+                    <br>
+                    <input type="radio" name="q2" value="a">a. Fred <br>
+                    <input type="radio" name="q2" value="b">b. Brian <br>
+                    <input type="radio" name="q2" value="c">c. Jim<br>
+                    <input type="radio" name="q2" value="d">d. Ted
+                    <br>
+                    <br>
+                    <h1>What is my sex?</h1>
+                    <br>
+                    <input type="radio" name="q3" value="a">a. female <br>
+                    <input type="radio" name="q3" value="b">b. other<br>
+                    <input type="radio" name="q3" value="c">c. male <br>
+                    <input type="radio" name="q3" value="d">d. neutral <br>
+                    <br>
+                    <br>
+                    <h1>What is my city?</h1>
+                    <br>
+                    <input type="radio" name="q4" value="a">a. Phoenix<br>
+                    <input type="radio" name="q4" value="b">b. Gilbert<br>
+                    <input type="radio" name="q4" value="c">c. Flagstaff<br>
+                    <input type="radio" name="q4" value="d">d. Chandler <br>
+                    <br>
+                    <br>
+                    <h1>What is my nationality?</h1>
+                    <br>
+                    <input type="radio" name="q5" value="a">a. Mexican <br>
+                    <input type="radio" name="q5" value="b">b. Israeli <br>
+                    <input type="radio" name="q5" value="c">c. Russian <br>
+                    <input type="radio" name="q5" value="d">d. American <br>
+                    <br>
+                    <br>
+                    <input type="submit" value="Submit">
+                </div>
+        </div>
+    </div>
+    </div>
+    </form>
 
-        <!-- jQuery -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <p id="correct"></p>
 
-        <!-- Script -->
-        <script type="text/javascript" src="assets/javascript/app.js"></script>
-        <!-- Script -->
-        <script>
+    <br>
 
-        </script>
+    <p id="incorrect"></p>
 
+    <br>
+
+    <p id="unanswered"></p> -->
+
+    <!-- <audio id="audio">
+                <source src=".mp3" type="assets">
+                <source src=".mp3" type="assets">
+            </audio> -->
+
+    jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Script -->
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+    <!-- Script -->
+    <script>
+
+    </script>
+    </div>
+    </div>
 </body>
 
 </html>
