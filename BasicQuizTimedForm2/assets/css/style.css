@@ -1,0 +1,49 @@
+html {
+    background: url("https://wallpapercave.com/wp/mRbeTCM.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  header {
+    font-family: 'Ewert', cursive;
+    color: black;
+    text-align: center;
+    font-size: 85px;
+  }
+
+  p {
+    font-family: 'Rye', cursive;
+    color: black;
+    text-align: center;
+    font-size: 30px;
+    line-height: 40px;
+    }
+
+#Start-button {
+    text-align: center;
+}
+
+#seconds {
+    text-align: center;
+    font-family: 'Maiden Orange', cursive;
+    font-size: 80px;
+    }
+
+#test_status {
+    top: 400px;
+    left: 125px;
+    font-size: 25px;
+    position: absolute;
+    font-family: 'Ultra', serif;
+}
+
+#test {
+    top: 500px;
+    left: 125px;
+    font-size: 25px;
+    position: absolute;
+    font-family: 'Ultra', serif;
+}
+
