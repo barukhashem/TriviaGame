@@ -30,7 +30,7 @@ function start() {
 var intervalId;
 
 // Create a countdown timer that counts down 60 seconds:
-var seconds = 13;
+var seconds = 60;
 
 // Creates "countdown in progress":
 function decrement() {
@@ -46,14 +46,14 @@ function decrement() {
 
         // console.log("Time's Up!");
 
-        test.innerHTML = "<h2>Time's up! You correctly answered " + correct + " out of " + questions.length + " questions.</h2>";
+        test.innerHTML = "<h2>Time's up! You correctly answered " + correct + " of " + questions.length + " questions.</h2>";
     }
 }
 
 // When countdown completes:
 function stop() {
     clearInterval(intervalId);
-    test.innerHTML = "<h2>Time's up! You correctly answered " + correct + " out of " + questions.length + " questions.</h2>";
+    test.innerHTML = "<h2>Time's up! You correctly answered " + correct + " of " + questions.length + " questions.</h2>";
 }
 
 var index = 0, test, test_status, question, choice, choices, chA, chB, chC, chD, correct = 0;
@@ -80,13 +80,13 @@ function renderQuestion() {
     if (index >= questions.length) {
         $("#seconds").hide();
         stop();
-        test.innerHTML = "<h2>You correctly answered " + correct + " out of " + questions.length + " questions.</h2>";
+        test.innerHTML = "<h2>You correctly answered " + correct + "  of " + questions.length + " questions.</h2>";
         _("test_status").innerHTML = "Yay! All done!";
         index = 0;
         correct = 0;
         return false;
     }
-    _("test_status").innerHTML = "Question " + (index + 1) + " out of " + questions.length + ":";
+    _("test_status").innerHTML = "Question #" + (index + 1) + " of " + questions.length + ":";
 
     question = questions[index][0];
     chA = questions[index][1];
