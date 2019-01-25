@@ -30,7 +30,7 @@ function start() {
 var intervalId;
 
 // Create a countdown timer that counts down 60 seconds:
-var seconds = 60;
+var seconds = 3;
 
 // Creates "countdown in progress":
 function decrement() {
@@ -54,6 +54,12 @@ function decrement() {
 function stop() {
     clearInterval(intervalId);
     test.innerHTML = "<h2>Time's up! You correctly answered " + correct + " of " + questions.length + " questions.</h2>";
+    // Gets link for audio:
+    var audio = document.createElement("audio");
+    audio.setAttribute("src", "assets/good_bad_ugly.wav");
+
+    // Plays audio file for losing "roar":
+    audio.play();
 }
 
 var index = 0, test, test_status, question, choice, choices, chA, chB, chC, chD, correct = 0;
@@ -84,6 +90,12 @@ function renderQuestion() {
         _("test_status").innerHTML = "Yay! All done!";
         index = 0;
         correct = 0;
+        // Gets link for audio:
+        var audio = document.createElement("audio");
+        audio.setAttribute("src", "assets/good_bad_ugly.wav");
+
+        // Plays audio file for losing "roar":
+        audio.play();
         return false;
     }
     _("test_status").innerHTML = "Question #" + (index + 1) + " of " + questions.length + ":";
@@ -115,7 +127,6 @@ function checkAnswer() {
     index++;
     renderQuestion();
 
-
-
 };
 window.addEventListener("load", renderQuestion, false);
+
