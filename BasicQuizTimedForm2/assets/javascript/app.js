@@ -29,8 +29,8 @@ function start() {
 // Global variables:
 var intervalId;
 
-// Create a countdown timer that counts down 60 seconds:
-var seconds = 3;
+// Create a countdown timer that counts down 45 seconds:
+var seconds = 45;
 
 // Creates "countdown in progress":
 function decrement() {
@@ -53,27 +53,29 @@ function decrement() {
 // When countdown completes:
 function stop() {
     clearInterval(intervalId);
+    _("test_status").innerHTML ="";
     test.innerHTML = "<h2>Time's up! You correctly answered " + correct + " of " + questions.length + " questions.</h2>";
     // Gets link for audio:
     var audio = document.createElement("audio");
     audio.setAttribute("src", "assets/good_bad_ugly.wav");
 
-    // Plays audio file for losing "roar":
+    // Plays audio file:
     audio.play();
 }
 
+// Questions/Answers array:
 var index = 0, test, test_status, question, choice, choices, chA, chB, chC, chD, correct = 0;
 var questions = [
-    ["'You've gotta ask yourself one question: 'Do I feel lucky?'", "Absolute Power", "Dirty Harry", "The Gauntlet", "Unforgiven", "B"],
-    ["'Right turn, Clyde.'", "Every Which Way But Loose", "Bronco Billy", "Any Which Way You Can", "Firefox", "C"],
-    ["'Go ahead, make my day.'", "The Enforcer", "Tightrope", "Magnum Force", "Sudden Impact", "D"],
-    ["'Get off my lawn!'", "The Mule", "Million Dollar Baby", "Gran Torino", "The Bridges Of Madison County", "C"],
-    ["'Everybody's got a right to be a sucker… once.'", "Two Mules For Sister Sara", "In The Line Of Fire", "Unforgiven", "The Dead Pool", "A"],
-    ["''Bout time this town had a new sheriff.'", "Unforgiven", "High Plains Drifter", "The Rookie", "City Heat", "B"],
-    ["'Dyin' ain't much of a living, boy.'", "Escape From Alcatraz", "Joe Kidd", "Kelly's Heroes", "The Outlaw Josey Wales", "D"],
-    ["'My mule don't like people laughing.'", "For A Few Dollars More", "The Good, The Bad, And The Ugly", "A Fistful Of Dollars", "Hang 'Em High", "C"],
-    ["'A man's got to know his limitations.'", "High Plains Drifter", "Magnum Force", "The Beguiled", "Kelly's Heroes", "B"],
-    ["'Don't call me buddy, pal, or sweetheart.'", "The Eiger Sanction", "A Perfect World", "Trouble With The Curve", "Pale Rider", "A"],
+    ["\"You've gotta ask yourself one question: 'Do I feel lucky?'\"", "Absolute Power", "Dirty Harry", "The Gauntlet", "Unforgiven", "B"],
+    ["\"Right turn, Clyde.\"", "Every Which Way But Loose", "Bronco Billy", "Any Which Way You Can", "Firefox", "C"],
+    ["\"Go ahead, make my day.\"", "The Enforcer", "Tightrope", "Magnum Force", "Sudden Impact", "D"],
+    ["\"Get off my lawn!\"", "The Mule", "Million Dollar Baby", "Gran Torino", "The Bridges Of Madison County", "C"],
+    ["\"Everybody's got a right to be a sucker… once.\"", "Two Mules For Sister Sara", "In The Line Of Fire", "Unforgiven", "The Dead Pool", "A"],
+    ["\"Well, right now I don't feel too agreeable.\"", "Unforgiven", "High Plains Drifter", "The Rookie", "City Heat", "B"],
+    ["\"Dyin' ain't much of a living, boy.\"", "Escape From Alcatraz", "Joe Kidd", "Kelly's Heroes", "The Outlaw Josey Wales", "D"],
+    ["\"It's not nice, you laughin'. My mule don't like people laughing.\"", "For A Few Dollars More", "The Good, The Bad, And The Ugly", "A Fistful Of Dollars", "Hang 'Em High", "C"],
+    ["\"A man's got to know his limitations.\"", "High Plains Drifter", "Magnum Force", "The Beguiled", "Kelly's Heroes", "B"],
+    ["\"Don't call me buddy, pal, or sweetheart.\"", "The Eiger Sanction", "A Perfect World", "Trouble With The Curve", "Pale Rider", "A"],
 ];
 
 function _(x) {
@@ -87,14 +89,14 @@ function renderQuestion() {
         $("#seconds").hide();
         stop();
         test.innerHTML = "<h2>You correctly answered " + correct + "  of " + questions.length + " questions.</h2>";
-        _("test_status").innerHTML = "Yay! All done!";
+        _("test_status").innerHTML = "Hey, not too shabby there, partner!";
         index = 0;
         correct = 0;
         // Gets link for audio:
         var audio = document.createElement("audio");
         audio.setAttribute("src", "assets/good_bad_ugly.wav");
 
-        // Plays audio file for losing "roar":
+        // Plays audio file:
         audio.play();
         return false;
     }
